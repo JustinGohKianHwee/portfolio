@@ -3,19 +3,18 @@
 import { motion } from "framer-motion";
 import React from "react";
 
-// 1. Declare your education data outside the component
 const educationTimeline = [
   {
     year: "2021 – Present",
     institution: "National University of Singapore",
-    degree: "Bachelor of Science in Business Analytics",
+    degree: "Bachelor of Science (w Hons) in Business Analytics",
     details: [
       "Major in Business Analytics, minor in Quantitative Finance",
       "Double Specialization in Financial and Machine Learning Analytics",
       "Recipient of NUS Merit Scholarship",
       "Exchange program at UBC, Vancouver (Jan – May 2025)",
-      "Programme's head of Sheares Hall Cultural Management Board",
-      "Programme's head of Sheares Hall Overseas Community Service Programme"
+      "Programmes head of Sheares Hall Cultural Management Board",
+      "Programmes head of Sheares Hall Overseas Community Service Programme"
     ],
   },
   {
