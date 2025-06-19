@@ -19,7 +19,7 @@ const Home = () => {
             <div>
               <TypingAnimation />
             </div>
-            <p className="max-w-[500px] mb-9 text-white/80">I excel at machine learning techniques and I am proficient in various programming languages and technologies</p>
+            <p className="max-w-[500px] mb-9 text-white/80">I’m passionate about Machine Learning Engineering and love building innovative software solutions and driving research forward. I’m always eager to tackle new challenges and am open to exciting opportunities.</p>
             <div className="flex flex-col xl:flex-row items-center gap-8">
               <Button variant= "outline" size = "lg" className= "uppercase flex items-center gap-2">
                 <span> Download CV </span>

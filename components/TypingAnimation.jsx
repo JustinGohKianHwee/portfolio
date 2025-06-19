@@ -6,14 +6,13 @@ const TypingAnimation = () => {
     return (
       <TypeAnimation
         sequence={[
-          // Same substring at the start will only be typed out once, initially
-          'I am a Business Analyst',
-          1000, // wait 1s before replacing "Mice" with "Hamsters"
-          'I am a Software Developer',
+          'I am a Software Engineer',
           1000,
-          'I am a ML Engineer',
+          'I am an ML Engineer',
           1000,
-          'I am a Data Analyst',
+          'I am a Research Engineer',
+          1000,
+          'I am a Data Scientist',
           1000
         ]}
         wrapper="span"

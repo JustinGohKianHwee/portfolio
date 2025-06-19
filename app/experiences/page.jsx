@@ -17,11 +17,27 @@ import WorkSliderBtns from "@/components/ui/WorkSliderBtns";
 import Link from "next/link"
 
 
-const projects = [
+const jobs = [
+  {
+    year: "2025",
+    company: "Visenze Pte Ltd",
+    image: "/assets/visenze.png",
+    role: "Machine Learning Research Engineer",
+    bullets: [
+      "Conducted research and experimentation to improve dense and sparse transformer-based embeddings for ViSenze’s multi-modal search system",
+      "Engineered and scaled large-scale hard negative mining workflows, culminating in an end-to-end continual improvement training pipeline for Visenze's sparse and dense models",
+      "Conducted comprehensive analysis of search regressions, focusing on embedding drift detection and resolution using advanced diagnostic tools, alongside rigorous evaluation of retrieval effectiveness via mAP/NDGC metrics and offline re-ranking pipelines",
+      "Leveraged and integrated LLM into research pipeline for structured annotation and generation, building an efficient MLOps codebase for future research purposes",
+      "Fine-tuned and deployed feature set release for synonym improvement for fashion search products"
+    ],
+    stack: [{ name: "Tensorflow"},{ name: "Pytorch"},{ name: "CUDA"},{ name: "Langchain"},{ name: "Ollama"},{ name: "OpenAI"},{ name: "HuggingFace Transformers"}],
+    github: "",
+    live: ""
+  },
   {
     year: "2024",
     company: "Deloitte & Touche",
-    image: "/assets/deloitte.png",
+    image: "/assets/deloitte.jpg",
     role: "Financial Forensic Data Analyst",
     bullets: [
       "Built an ensemble ML classifier (unsupervised + supervised) to flag risky/fraudulent customers & transactions",
@@ -29,14 +45,14 @@ const projects = [
       "Enhanced features in existing data-viz software",
       "Queried and managed transactional data via SQL in relational databases",
     ],
-    stack: [{ name: "Python"}, { name: "Scikit-learn"}, { name: "Java"}],
+    stack: [{ name: "Python"}, { name: "Scikit-learn"}, { name: "Jupyterlab"}],
     github: "",
     live: ""
   },
   {
     year: "2023",
     company: "Land Transport Authority",
-    image: "/assets/lta.png",
+    image: "/assets/lta.jpeg",
     role: "Finance Software Engineer",
     bullets: [
       "Developed Python and UiPath bots to automate inefficient and manual financial processes",
@@ -44,14 +60,14 @@ const projects = [
       "Streamlined workflows, reducing manual time by 65% (21 man-days saved/yr)",
       "Conducted multiple User Acceptance Testing cycles",
     ],
-    stack: [{ name: "Python"}, { name: "Scikit-learn"}, { name: "Java"}],
+    stack: [{ name: "Python"}, { name: "Java"}],
     github: "",
     live: ""
   },
   {
     year: "2022",
     company: "PriceWaterhouseCoopers",
-    image: "/assets/pwc.png",
+    image: "/assets/pwc.jpg",
     role: "Assurance Intern",
     bullets: [
       "Processed incoming Bank Confirmations before dissemination to relevant GA teams and Partners for further action",
@@ -59,17 +75,17 @@ const projects = [
       "Facilitated processing and sending out of engagement letters to firms",
       "Used Excel and Outlook for business communications and data recording",
     ],
-    stack: [{ name: "Python"}, { name: "Scikit-learn"}, { name: "Java"}],
+    stack: [],
     github: "",
     live: ""
   },
 ];
 
-const Work = () => {
-  const [project, setProject] = useState(projects[0]);
+const Experiences = () => {
+  const [job, setjob] = useState(jobs[0]);
   const handleSlideChange = (swiper) => {
     const currentIdx = swiper.activeIndex;
-    setProject(projects[currentIdx]);
+    setjob(jobs[currentIdx]);
   }
   return <motion.section 
     initial= {{opacity: 0}} 
@@ -82,42 +98,42 @@ const Work = () => {
           <div className= "flex flex-col gap-[30px]">
             <div className= "text-8xl leading-none font-extrabold text-transparent text-outline"
             style={{ WebkitTextStroke: "2px #ffb703", color: "transparent" }}>
-              {project.year}
+              {job.year}
             </div>
             <h2 className= "text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
-              {project.role} 
+              {job.role} 
             </h2>
             <h3 className= "text-[24px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
-              {project.company} 
+              {job.company} 
             </h3>
-            <ul className="text-white/60">
-            {project.bullets.map((line, idx) => (
+            <ul className="text-white/60 space-y-4">
+            {job.bullets.map((line, idx) => (
                 <li key={idx}>{line}</li>
               ))}
             </ul>
             <ul className="flex gap-4">
-            {project.stack.map((item, idx) => (
+            {job.stack.map((item, idx) => (
                 <li key={idx} className="text-xl text-accent">
                   {item.name}
-                  {idx !== project.stack.length - 1 && ","}
+                  {idx !== job.stack.length - 1 && ","}
                   </li>
               ))}
             </ul>
             <div className="border border-white/20"></div>
             <div className="flex items-center gap-4">
-            <Link href = {project.live}>
+            <Link href = {job.live}>
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger className = "w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
                       <BsArrowUpRight className= "text-white text-3xl group-hover:text-accent"/>
                     </TooltipTrigger>
                     <TooltipContent>
-                      <p>Live Project</p>
+                      <p>Live job</p>
                     </TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
               </Link>
-              <Link href = {project.github}>
+              <Link href = {job.github}>
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger className = "w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
@@ -134,12 +150,12 @@ const Work = () => {
         </div>
         <div className="w-full xl:w-[50%]">
           <Swiper spaceBetween={30} slidesPerView={1} className="xl:h-[520px] mb-12" onSlideChange={handleSlideChange}>
-            {projects.map((project,index)=> {
+            {jobs.map((job,index)=> {
               return <SwiperSlide key = {index} className="w-full">
                 <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
                 <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
                 <div className="relative w-full h-full">
-                  <Image src={project.image} fill className="object-cover" alt=""/>
+                  <Image src={job.image} fill className="object-cover" alt=""/>
                 </div>
                 </div>
               </SwiperSlide>
@@ -153,4 +169,4 @@ const Work = () => {
   </motion.section>
 };
 
-export default Work;
+export default Experiences;

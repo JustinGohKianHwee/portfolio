@@ -14,6 +14,8 @@ const educationTimeline = [
       "Double Specialization in Financial and Machine Learning Analytics",
       "Recipient of NUS Merit Scholarship",
       "Exchange program at UBC, Vancouver (Jan – May 2025)",
+      "Programme's head of Sheares Hall Cultural Management Board",
+      "Programme's head of Sheares Hall Overseas Community Service Programme"
     ],
   },
   {
@@ -70,7 +72,7 @@ export default function Education() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, delay: idx < 2 ? 2.4 + idx * 0.2 : idx * 0.2 }}
+            transition={{ duration: 0.6, delay: idx == 0 ? 2.4 + idx * 0.2 : idx * 0.2 }}
           >
             <div className="timeline-dot" />
             <div
@@ -81,9 +83,9 @@ export default function Education() {
             </div>
 
             <div className="timeline-content flex flex-col gap-8">
-              <h2 className="h2">{edu.institution}</h2>
-              <p className="h3">{edu.degree}</p>
-              <ul className="list-disc list-inside text-left h4">
+              <h2 className="h2 text-[36px]">{edu.institution}</h2>
+              <p className="h3 text-[24px] text-accent">{edu.degree}</p>
+              <ul className="list-disc list-inside text-left h4 text-white/60">
                 {edu.details.map((detail, i) => (
                   <li key={i}>{detail}</li>
                 ))}
