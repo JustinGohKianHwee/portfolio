@@ -112,7 +112,7 @@ const technologies = {
         },
         {
             icon: <SiNextdotjs />,
-            name: "Nexj.js"
+            name: "Next.js"
         },
         
     ]

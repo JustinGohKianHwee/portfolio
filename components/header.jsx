@@ -3,7 +3,7 @@ import { Button } from "./ui/button"
 import Nav from "./nav"
 import MobileNav from "./mobilenav"
 
-const header = () => {
+const Header = () => {
     return (
         <header className= "py-8 xl:py-12 text-white">
             <div className= "container mx-auto flex justify-between items-center">
@@ -34,4 +34,4 @@ const header = () => {
     )
 }
 
-export default header
+export default Header
