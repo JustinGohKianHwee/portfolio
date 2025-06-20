@@ -1,6 +1,6 @@
 "use client";
 
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetHeader } from "@/components/ui/sheet"
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { CiMenuFries } from "react-icons/ci"
@@ -27,9 +27,13 @@ const Links = [
         path: "/projects"
     },
     {
-        name: "contact",
+        name: "Why me?",
+        path: "/whyme"
+    },
+    {
+        name: "Hire me",
         path: "/contact"
-    }
+    },
 ]
 
 const mobilenav = () => {
@@ -41,6 +45,9 @@ const mobilenav = () => {
             <CiMenuFries className= "text-[32px] text-accent"/>
         </SheetTrigger>
         <SheetContent className = "flex flex-col">
+            <SheetHeader>
+                <SheetTitle className="sr-only"> Navigation Menu  </SheetTitle>
+            </SheetHeader>
             <div className="mt-32 mb-32 text-center text-2xl">
                 <Link href ="/">
                     <h1 className= "text-4xl font-semibold gap-8">
