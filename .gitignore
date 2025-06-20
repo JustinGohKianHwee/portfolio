@@ -1,0 +1,91 @@
+########################################
+#  Node / Next.js
+########################################
+# dependencies
+/node_modules/
+/.pnp/
+/.pnp.js
+.yarn/install-state.gz
+
+# builds
+/.next/
+/out/
+/build/
+
+# static exports
+/out/
+
+# Next env
+.env*.local
+.next-env.d.ts
+
+########################################
+#  Python / Flask
+########################################
+# byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# virtual environments
+.venv/
+venv/
+env/
+ENV/
+backend/.venv/
+
+# packaging
+build/
+dist/
+*.egg-info/
+pip-wheel-metadata/
+
+# test caches
+.pytest_cache/
+
+# dotenv
+.env
+
+########################################
+#  Testing / Coverage
+########################################
+/coverage/
+/pytest_cache/
+
+########################################
+#  Logs and misc
+########################################
+# debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# certificates and keys
+*.pem
+
+########################################
+#  IDEs and editors
+########################################
+.vscode/
+.idea/
+
+########################################
+#  Vercel / Deployment
+########################################
+.vercel/
+
+########################################
+#  Misc
+########################################
+# optional lockfiles
+package-lock.json
+yarn.lock
+
+# You can still have folder-specific .gitignore if needed:
+# e.g. backend/special-case/.gitignore
