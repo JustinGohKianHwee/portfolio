@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-primary bg-primary text-white leading-loose;
+  }
+  .h1 {
+    @apply text-[48px] xl:text-[80px] leading-[1.1] font-semibold;
+  }
+  .h2 {
+    @apply text-[36px] xl:text-[48px] leading-[1.1] font-semibold;
+  }
+  .h3 {
+    @apply text-[20px] xl:text-[24px] leading-[1.1] font-semibold;
+  }
+  .h4 {
+    @apply text-[15px] xl:text-[17px] leading-[1.1] font-semibold;
+  }
+}
+
+@layer components {
+  .timeline-items {
+    @apply relative max-w-6xl mx-auto py-16 flex flex-col gap-[30px];
+  }
+  /* center “spine” line */
+  .timeline-items::before {
+    content: "";
+    @apply absolute w-[4px] bg-accent left-1/2 top-0 bottom-0;
+    transform: translateX(-50%);
+  }
+
+  .timeline-item {
+    @apply relative flex items-center justify-between w-full mb-12;
+    min-height: 200px; /* adjust so your content always fits */
+  }
+
+  /* the dot, dead-center of each row */
+  .timeline-dot {
+    @apply absolute w-5 h-5 bg-accent rounded-full;
+    box-shadow: 0 0 25px #ffb703, 0 0 50px #ffb703;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .timeline-date {
+    @apply w-[45%] text-right text-6xl leading-none font-extrabold text-transparent;
+    -webkit-text-stroke: 2px #ffb703;
+    color: transparent;
+  }
+
+  .timeline-content {
+    @apply w-[45%] bg-primary border-4 border-accent rounded-xl p-8
+           transition-transform transition-opacity duration-300 ease-in-out ;
+    box-shadow: 0 0 25px #ffb703, 0 0 50px #ffb703;
+  }
+
+  /* swap sides on even rows */
+  .timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+}
+
+html {
+  /* tells modern browsers to reserve gutter space */
+  scrollbar-gutter: stable;
+}
+
+
