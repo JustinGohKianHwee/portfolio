@@ -38,29 +38,13 @@ const educationTimeline = [
       "Vice-Captain of Raffles Squash"
     ],
   },
-  {
-    year: "2011 – 2013",
-    institution: "Catholic High School (Primary)",
-    degree: "Primary School Leaving Examination (PSLE)",
-    details: [
-      "Graduated with distinction in PSLE subjects",
-      "Enrolled in Gifted Education Programme"
-    ],
-  },
-  {
-    year: "2008 – 2010",
-    institution: "Ai Tong Primary School",
-    degree: "",
-    details: [
-      "Top in class 2008,2009",
-    ],
-  },
+  
 ];
 
 export default function Education() {
   return (
     <section className="h-full">
-      <h1 className="h1 justify-center text-center">Education</h1>
+      <h1 className="h1 justify-center text-center text-[64px]">Education</h1>
       <br />
 
       <div className="timeline-items">
@@ -82,8 +66,8 @@ export default function Education() {
             </div>
 
             <div className="timeline-content flex flex-col gap-8">
-              <h2 className="h2 text-[36px]">{edu.institution}</h2>
-              <p className="h3 text-[24px] text-accent">{edu.degree}</p>
+              <h2 className="h2 text-[30px]">{edu.institution}</h2>
+              <p className="h3 text-[20px] text-accent">{edu.degree}</p>
               <ul className="list-disc list-inside text-left h4 text-white/60">
                 {edu.details.map((detail, i) => (
                   <li key={i}>{detail}</li>
