@@ -28,10 +28,6 @@ const Links = [
         name: "Why me?",
         path: "/whyme"
     },
-    {
-        name: "contact",
-        path: "/contact"
-    }
 ]
 
 const Nav = () => {
